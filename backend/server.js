@@ -7,8 +7,6 @@ const login = require("./routes/api/login");
 const bcrypt = require('bcrypt');
 const docteur = require("./routes/api/docteur");
 const patient = require("./routes/api/patient");
-
-
 const admin = require("./routes/api/admin")
 
 const app = express();
@@ -29,8 +27,6 @@ app.use("/routes/api/login",login);
 app.use("/routes/api/docteur",docteur);
 app.use("/routes/api/patient",patient);
 app.use('/uploads', express.static('uploads'));
-
-
 app.use('/routes/api/admin',admin);
 
 
