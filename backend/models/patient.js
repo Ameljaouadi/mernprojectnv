@@ -20,6 +20,7 @@ const PatientSchema = new Schema({
         required : true,
     },
 
+    
     DateNaissance : {
         type : Date,
         required :true,
