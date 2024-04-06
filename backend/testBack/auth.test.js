@@ -9,7 +9,7 @@ describe('Authentication API', () => {
     expect(response.statusCode).toBe(401);
   });
 
-  it('should return 2021 for authenticated user', async () => {
+  it('should return 2020 for authenticated user', async () => {
     const response = await request(app).get('/routes/api/patient').set('x-auth-token', 'YOUR_VALID_TOKEN');
     expect(response.statusCode).toBe(200);
   });
