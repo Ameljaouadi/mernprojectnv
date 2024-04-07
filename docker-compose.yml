@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  backend:
+    image: imgback
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3001"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - mongodb
+    networks:
+      - mern-network
+
+  frontend:
+    image: imgfront
+    build:
+      context: ./frontend/monapp
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/monapp:/app
+    networks:
+      - mern-network
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+    networks:
+      - mern-network
+
+networks:
+  mern-network:
+    driver: bridge
+
