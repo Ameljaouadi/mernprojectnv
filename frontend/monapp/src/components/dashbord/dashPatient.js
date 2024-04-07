@@ -2,7 +2,6 @@ import React, { useState} from "react";
 
 import Navbar from "../navbar/navbar";
 import Psidebar from "../sidebar/Psidebar";
-import DoctorCard from "../card/doctorCard";
 
 
 import "./dashbord.css";
